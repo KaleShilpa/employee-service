@@ -1,9 +1,13 @@
 package com.javaexpress.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.javaexpress.bean.Employee;
 import com.javaexpress.service.EmployeeService;
 
 @RestController
@@ -11,6 +15,12 @@ import com.javaexpress.service.EmployeeService;
 public class EmployeeController {
 	
 	@Autowired
-	public EmployeeService employeeService;
+	private EmployeeService employeeService;
+	
+	@GetMapping("/employees")
+	public List<Employee> getAllEmployees(){
+		
+		return employeeService.getAllEmployees() ;
+	}
 
 }

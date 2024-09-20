@@ -9,6 +9,6 @@ import com.javaexpress.bean.Employee;
 @Service
 public interface EmployeeService {
 
-	public List<Employee> getEmployees();
+	public List<Employee> getAllEmployees();
 	
 }
