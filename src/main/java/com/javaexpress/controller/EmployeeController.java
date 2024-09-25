@@ -32,6 +32,11 @@ public class EmployeeController {
 		return employeeService.createEmployee(employee);
 	}
 	
+	@GetMapping("/employees/delete/{id}")
+	public void deleteEmployee(@PathVariable Long id) {
+		employeeService.deleteEmployee(id);
+	}
+	
 	@GetMapping("/employees/{id}")
 	public Employee getEmployeeById(@PathVariable Long id) {
 		return employeeService.getEmployeeById(id);
